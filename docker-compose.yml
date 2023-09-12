@@ -1,0 +1,9 @@
+version: '3.8'
+
+services:
+  blazorapp:
+    image: blazorapp
+    container_name: blazor-app
+    ports:
+      - 80:80
+    restart: unless-stopped
