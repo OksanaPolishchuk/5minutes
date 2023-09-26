@@ -1,0 +1,39 @@
+﻿@page "/calculator"
+
+<h1>Calculator</h1>
+
+<p role="status">Result: @result</p>
+
+<input type="number" @bind="number1" placeholder="Enter the first number" />
+<input type="number" @bind="number2" placeholder="Enter the second number" />
+
+<button class="btn btn-primary" @onclick="Calculate">Calculate</button>
+
+@code {
+    private int number1;
+    private int number2;
+    private string result = "";
+
+    private void Calculate()
+    {
+        if (number1 % 2 == 1)
+        {
+            number1 += 2;
+        }
+        else
+        {
+            number1 *= 10;
+        }
+
+        if (number2 % 2 == 1)
+        {
+            number2 += 2;
+        }
+        else
+        {
+            number2 *= 10;
+        }
+
+        result = $"Result: {number1} and {number2}";
+    }
+}
